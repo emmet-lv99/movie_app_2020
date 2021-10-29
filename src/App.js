@@ -1,6 +1,25 @@
+// import Potato from "./Potato";
+// import styled from "styled-components"
+// import PropTypes from 'prop-types'
+import React from "react";
 
-function App() {
-  return <div className="App" />;
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: []
+  }
+
+  componentDidMount() {
+    // 영화 데이터 로딩!
+    setTimeout(() => {
+      this.setState({isLoading: false})
+    }, 6000)
+  }
+
+  render() {
+    const { isLoading } = this.state
+    return <div>{isLoading ? 'Loading...' : 'We are ready'}</div>
+  }
 }
 
 export default App;
